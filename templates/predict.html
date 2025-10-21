@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predict Survival</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Titanic Survival Predictor</h1>
+        <form method="POST">
+            <label>Pclass:</label>
+            <select name="Pclass" required>
+                <option value="">Select Class</option>
+                <option value="1">1st Class</option>
+                <option value="2">2nd Class</option>
+                <option value="3">3rd Class</option>
+            </select>
+            
+            <label>Sex:</label>
+            <select name="Sex" required>
+                <option value="">Select Sex</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            
+            <label>Age:</label>
+            <input type="number" name="Age" step="0.1" required>
+            
+            <label>SibSp:</label>
+            <input type="number" name="SibSp" required>
+            
+            <label>Parch:</label>
+            <input type="number" name="Parch" required>
+            
+            <label>Fare:</label>
+            <input type="number" name="Fare" step="0.01" required>
+            
+            <label>Embarked:</label>
+            <select name="Embarked" required>
+                <option value="">Select Port</option>
+                <option value="S">Southampton (S)</option>
+                <option value="C">Cherbourg (C)</option>
+                <option value="Q">Queenstown (Q)</option>
+            </select>
+            
+            <button type="submit">Predict</button>
+        </form>
+        <br>
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>
