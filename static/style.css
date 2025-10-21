@@ -81,3 +81,9 @@ button {
     margin-top: 20px;
     width: 100%;
 }
+a {
+    margin: 10px auto;
+    display: block;
+    text-align: center;
+    width: 90%;
+}
