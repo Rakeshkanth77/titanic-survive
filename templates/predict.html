@@ -7,6 +7,17 @@
 <body>
     <div class="container">
         <h1>Titanic Survival Predictor</h1>
+                <!-- Display flash messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div style="background: #fee; color: #c33; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #c33;">
+                    {% for message in messages %}
+                        <p><strong>⚠️ {{ message }}</strong></p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        
         <form method="POST">
             <label>Pclass:</label>
             <select name="Pclass" required>
@@ -26,15 +37,18 @@
             <label>Age:</label>
             <input type="number" name="Age" step="0.1" required>
             
-            <label>SibSp:</label>
-            <input type="number" name="SibSp" required>
-            
-            <label>Parch:</label>
-            <input type="number" name="Parch" required>
-            
-            <label>Fare:</label>
-            <input type="number" name="Fare" step="0.01" required>
-            
+            <label>SibSp (Siblings + Spouse):</label>
+            <input type="number" name="SibSp" min="0" max="8" required>
+            <small style="color: #999;">0-8: Brothers, sisters, or spouse on board</small>
+
+            <label>Parch (Parents + Children):</label>
+            <input type="number" name="Parch" min="0" max="6" required>
+            <small style="color: #999;">0-6: Parents or children on board</small>
+
+            <label>Fare (Ticket Price £):</label>
+            <input type="number" name="Fare" min="0" max="600" step="0.01" required>
+            <small style="color: #999;">0-600: 1st Class (£7-512), 2nd Class (£3-26), 3rd Class (£3-69)</small>
+                        
             <label>Embarked:</label>
             <select name="Embarked" required>
                 <option value="">Select Port</option>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        
+        <h2 style="color: #d4af37; margin: 30px 0;">{{ result }}</h2>
+        
+        <p style="font-size: 16px; line-height: 1.8;">
+            <strong>Explanation:</strong><br>
+            {{ explanation }}
+        </p>
+        
+        <div style="margin-top: 30px; display: flex; gap: 10px;">
+            <a href="/predict">Make Another Prediction</a>
+            <a href="/">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
